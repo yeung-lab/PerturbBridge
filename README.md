@@ -4,6 +4,8 @@ Diffusion-bridge training for cellular perturbation modeling on **BBBC021**,
 **JUMP-small**, and **Allen**. The repository includes the models, training
 objectives, samplers, and default configurations.
 
+**Paper:** [PerturbBridge: Direct Phenotypic Supervision for Cellular Perturbation Generation](https://arxiv.org/abs/2610.17066)
+
 ## Installation
 
 Use Python 3.10 or 3.11 on a Linux machine with NVIDIA GPUs.
@@ -102,6 +104,21 @@ To inspect the launch commands without starting training:
 ```bash
 python train.py --dataset bbbc --dry-run
 python train.py --help
+```
+
+## Citation
+
+If you find this work useful, please cite our paper:
+
+```bibtex
+@article{yang2026perturbbridge,
+  title={{PerturbBridge}: Direct Phenotypic Supervision for Cellular Perturbation Generation},
+  author={Yang, Yucheng and Sun, Xiaoxiao and Sun, Huangqingbo and Sui, Elaine and Lundberg, Emma and Yeung-Levy, Serena},
+  journal={arXiv preprint arXiv:2610.17066},
+  year={2026},
+  doi={10.48550/arXiv.2610.17066},
+  url={https://arxiv.org/abs/2610.17066}
+}
 ```
 
 ## Acknowledgments
