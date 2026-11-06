@@ -29,9 +29,8 @@ Prepare CellFlux-format cell images, metadata, and condition embeddings:
   [Allen Cell Explorer](https://www.allencell.org/data-downloading.html)
   and prepare the cell arrays and metadata described in [DATA.md](DATA.md).
 
-The loaders expect preprocessed 96 × 96 cell images, not raw microscopy volumes.
-Segmentation, split construction, and embedding generation are not included.
-See [DATA.md](DATA.md) for the exact file schemas and image layouts.
+Prepare 96 × 96 cell crops with their metadata, dataset splits, and condition
+embeddings following [DATA.md](DATA.md), then arrange them as follows:
 
 ```text
 data/
