@@ -1,24 +1,35 @@
 # PerturbBridge
 
 Diffusion-bridge training for cellular perturbation modeling on **BBBC021**,
-**JUMP-small**, and **Allen**. The repository includes the models, training
-objectives, samplers, and default configurations.
+**JUMP-small**, and **Allen**.
 
 **Paper:** [PerturbBridge: Direct Phenotypic Supervision for Cellular Perturbation Generation](https://arxiv.org/abs/2610.17066)
+
+## Repository contents
+
+- [engines/](engines/): model architectures, training objectives, samplers,
+  dataset loaders, and feature-statistics preparation code for the three datasets.
+- [configs/](configs/): dataset-specific training and sampling configurations
+  and multi-stage training plans.
+- [train.py](train.py) and [scripts/](scripts/): training launchers,
+  checkpoint-resume utilities, and release checks.
+- [DATA.md](DATA.md): input formats, metadata fields, condition embeddings,
+  and directory layouts.
+- [requirements.txt](requirements.txt): Python dependencies.
 
 ## Installation
 
 Use Python 3.10 or 3.11 on a Linux machine with NVIDIA GPUs.
 
 ```bash
-git clone https://github.com/yyc1215lll-creator/PerturbBridge.git
+git clone https://github.com/yeung-lab/PerturbBridge.git
 cd PerturbBridge
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Data and weights
+## Prepare training inputs
 
 Prepare CellFlux-format cell images, metadata, and condition embeddings:
 
@@ -57,8 +68,8 @@ curl -L --fail \
   -o external/inception_v3.pth
 ```
 
-Use the **torch-fidelity** weights above, not the torchvision classification
-checkpoint. The bridge models train from scratch; no pretrained generator is required.
+The auxiliary losses use the **torch-fidelity Inception-v3** weights linked
+above. The bridge models train from scratch.
 
 ## Training
 
@@ -125,4 +136,3 @@ If you find this work useful, please cite our paper:
 This implementation builds on [CellFlux](https://github.com/yuhui-zh15/CellFlux)
 and its diffusion-bridge utilities. Upstream licenses and source attributions
 are retained in [third_party/](third_party/) and the corresponding source files.
-Dataset and pretrained-weight licenses apply separately.
