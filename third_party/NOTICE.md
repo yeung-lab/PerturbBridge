@@ -7,5 +7,4 @@ OpenAI ADM/guided-diffusion utilities, k-diffusion, and NVIDIA EDM augmentation.
 The included corruption modules retain their original LICENSE files and headers.
 
 PyTorch, torchvision, torch-fidelity and other dependencies are installed
-separately and remain subject to their respective licenses. No third-party
-weights or datasets are redistributed in this repository.
+separately and remain subject to their respective licenses.

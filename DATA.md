@@ -25,7 +25,6 @@ STRUCTURE is the structure/target label, and each BATCH has a single structure.
 feature columns. BBBC indexes CPD_NAME (1024 features); JUMP indexes BROAD_SAMPLE
 (1224 features); Allen indexes CPD_NAME (12 features, additive 5-drug+7-structure
 one-hot). Supply the same encoding/vocabulary order as your paired metadata.
-Embeddings themselves are not bundled.
 
 The dataset resolvers accept these storage layouts:
 
@@ -40,4 +39,4 @@ The dataset resolvers accept these storage layouts:
 BBBC held-out compounds are listed explicitly in each BBBC JSON configuration.
 They are removed from treated rows, never from the control pool. Frozen feature
 statistics are generated from TRAIN cells only; TEST images do not form training
-prototypes. Data and feature caches are runtime inputs and are not bundled here.
+prototypes.
